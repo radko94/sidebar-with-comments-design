@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <aside class="sidebar-container">
@@ -28,25 +28,27 @@
                 </button>
             </aside>
         </header>
+        <aside class="new-comment-container">
+            <textarea placeholder="Write a comment..." class="main-sidebar-container-input"></textarea>
+            <aside class="buttons">
+                <button class="save-btn">Save</button>
+                <button class="screenshot-btn">Screenshot</button>
+                <button class="cancel-btn">Cancel</button>
+            </aside>
+        </aside>
         <main class="main-sidebar-container">
-            <header class="text-area-container">
-                <textarea placeholder="Write a comment..." class="main-sidebar-container-input" name="" id="" rows="10"></textarea>
-                <aside class="buttons">
-                    <button class="save-btn">Save</button>
-                    <button class="screenshot-btn">Screenshot</button>
-                    <button class="cancel-btn">Cancel</button>
-                </aside>
-            </header>
             <article class="comment-container">
                 <header>
-                    <p>user</p>
+                    <p class="username-and-comment-time">John Doe <span class="comment-time">few minutes ago...</span></p>
                 </header>
-                <main>
-                    <p>
+                <main class="comment-text-container">
+                    <p class="comment-text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sapiente, officiis voluptatibus nesciunt maxime distinctio
                         nulla optio ducimus autem recusandae, asperiores voluptate 
                         ex hic quo debitis assumenda tenetur incidunt accusantium culpa?
+                        <!-- here -->
+                        Lorem ipsum dolor sit amet conse...
                     </p>
                 </main>
             </article>
@@ -55,14 +57,16 @@
                     <img width="500" src="./spider-macro-1635248.jpg" alt="text">
                 </aside>
                 <header>
-                    <p>user</p>
+                    <p class="username-and-comment-time">John Doe <span class="comment-time">22 minutes ago</span></p>
                 </header>
-                <main>
-                    <p>
+                <main class="comment-text-container">
+                    <p class="comment-text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sapiente, officiis voluptatibus nesciunt maxime distinctio
                         nulla optio ducimus autem recusandae, asperiores voluptate 
                         ex hic quo debitis assumenda tenetur incidunt accusantium culpa?
+                        <!-- here -->
+                        Lorem ipsum dolor sit amet conse...
                     </p>
                 </main>
             </article>
@@ -71,10 +75,10 @@
                     <img width="500" src="./spider-macro-1635248.jpg" alt="text">
                 </aside>
                 <header>
-                    <p>user</p>
+                    <p class="username-and-comment-time">John Doe <span class="comment-time">April 21, 2023</span></p>
                 </header>
-                <main>
-                    <p>
+                <main class="comment-text-container">
+                    <p class="comment-text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sapiente, officiis voluptatibus nesciunt maxime distinctio
                         nulla optio ducimus autem recusandae, asperiores voluptate 
@@ -84,10 +88,10 @@
             </article>
             <article class="comment-container">
                 <header>
-                    <p>user</p>
+                    <p class="username-and-comment-time">John Doe <span class="comment-time">April 18, 2023</span></p>
                 </header>
-                <main>
-                    <p>
+                <main class="comment-text-container">
+                    <p class="comment-text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Sapiente, officiis voluptatibus nesciunt maxime distinctio
                         nulla optio ducimus autem recusandae, asperiores voluptate 
@@ -97,5 +101,37 @@
             </article>
         </main>
     </aside>
+    <script>
+        const textarea = document.querySelector('textarea');
+        const buttons = document.querySelector('.buttons');
+
+        textarea.addEventListener('focus', () => {
+          buttons.style.display = 'flex';
+        });
+
+        textarea.addEventListener('blur', () => {
+        //   buttons.style.display = 'none';
+        });
+
+        const saveBtn = document.querySelector('.save-btn');
+        const screenshotBtn = document.querySelector('.screenshot-btn');
+        const cancelBtn = document.querySelector('.cancel-btn');
+
+        saveBtn.addEventListener('click', () => {
+          textarea.value = '';
+          buttons.style.display = 'none';
+          textarea.blur();
+        });
+
+        screenshotBtn.addEventListener('click', () => {
+          alert('Taking screenshot...');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+          textarea.value = '';
+          buttons.style.display = 'none';
+          textarea.blur();
+        });
+    </script>
 </body>
 </html>
