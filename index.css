@@ -15,7 +15,8 @@ body {
     display: flex;
     flex-direction: column;
     width: 500px;
-    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    /* elevation level 4 */
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     padding: 15px;
     border-top-left-radius: .5rem;
     border-bottom-left-radius: .5rem;
@@ -29,6 +30,8 @@ body {
 }
 
 .main-sidebar-container {
+    /* elevation level 4 */
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     overflow: hidden;
     overflow-y: auto;
     padding: 15px;
@@ -50,27 +53,28 @@ body {
     flex-direction: column;
     border-radius: .5rem;
     overflow: hidden;
-
-    transition: all 0.2s ease-out;
-    box-shadow: 0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f;
+    /* elevation level 4 */
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     border: 1px solid #ccc;
     margin-bottom: 15px;
 }
 
-.new-comment-container:focus-within {
-    /* box-shadow: 0 4px 8px -2px #0003, 0 8px 10px #00000024, 0 2px 20px #0000001f; */
-    position: sticky;
-    transition: all 0.2s ease-out;
-    box-shadow: 0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f;
+.new-comment-container:hover {
+    /* elevation level 8 */
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
+.new-comment-container:focus-within {
+    /* elevation level 8 */
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
 
 .main-sidebar-container-input {
     border: none;
     height: 35px;
     padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .main-sidebar-container-input::placeholder {
@@ -79,10 +83,13 @@ body {
 }
 
 .main-sidebar-container-input:focus {
-
     min-height: 80px;
     transition: all 0.2s ease-out;
     outline: none;
+}
+
+.main-sidebar-container-input:focus + .buttons {
+    height: 80px;
 }
 
 .main-sidebar-container-input:focus::placeholder {
@@ -94,6 +101,7 @@ body {
     border: 2px solid transparent;
     padding: 1px 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .material-symbols-outlined:hover {
@@ -101,7 +109,7 @@ body {
 }
 
 .main-sidebar-container::-webkit-scrollbar {
-    width: 13px;
+    width: 9px;
     background-color: #cccccc;
     border-radius: 100vh;
 }
@@ -112,35 +120,31 @@ body {
 }
 
 .comment-container {
-    box-shadow: 0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f;
+    /* elevation level 8 */
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
     border-radius: .5rem;
     overflow: hidden;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.comment-container:first-of-type {
-
+.comment-container:hover {
+    /* elevation level 14 */
+    box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
 }
 
 .comment-container:last-of-type {
     margin-bottom: unset;
 }
 
-.username-and-comment-time {
-    font-weight: bolder;
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
-.comment-text-container {
-    /* display: -webkit-box; */
-    /* -webkit-line-clamp: 5; */
-    /* -webkit-box-orient: vertical; */
-    /* display: flex;
-    flex-direction: row;
-    line-clamp: 5;
-    line-break: 5;
-    overflow: hidden; */
+.username-and-comment-time {
+    font-weight: bolder;
 }
 
 .comment-text {
@@ -164,26 +168,23 @@ body {
     display: flex;
 }
 
-.image-container {
-
+.keyboard-return-icon {
+    color: #0288d1;
 }
 
+.keyboard-return-icon:hover {
+    border-color: #0288d1;
+}
 
+.done-icon {
+    color: #2e7d32;
+}
 
+.done-icon:hover {
+    border-color: #2e7d32;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Refactor */
+/* Needs refactoring */
 .buttons {
     display: none;
     justify-content: flex-end;
